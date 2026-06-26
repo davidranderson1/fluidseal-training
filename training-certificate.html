@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Training Certificate Program | FluidSeal AB</title>
+<title>Staff Technical Certification | FluidSeal AB</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -33,19 +33,63 @@ nav{background:#0f1923;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 
 
 /* ── HERO ── */
 .cert-hero{
-  background:linear-gradient(160deg,#0b1520 0%,#111a26 50%,#0d1118 100%);
-  padding:64px 32px 56px;text-align:center;position:relative;overflow:hidden;
+  background:#0b1520;
+  padding:72px 32px 60px;text-align:center;position:relative;overflow:hidden;
   border-bottom:1px solid var(--border);
 }
-.cert-hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(200,34,42,0.09),transparent 70%);
-  pointer-events:none;
+/* Diagonal industrial stripe pattern */
+.cert-hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(
+    -55deg,
+    transparent,transparent 40px,
+    rgba(255,255,255,0.013) 40px,rgba(255,255,255,0.013) 41px
+  );
 }
-.cert-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,34,42,0.12);border:1px solid rgba(200,34,42,0.3);color:#ff6b6b;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:24px}
-.cert-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1;margin-bottom:16px;color:#fff}
-.cert-hero h1 em{color:var(--red);font-style:normal;display:block}
-.cert-hero p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 40px;line-height:1.7}
+/* Red radial glow */
+.cert-hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%,rgba(200,34,42,0.13),transparent 65%),
+    radial-gradient(ellipse 40% 30% at 80% 80%,rgba(58,123,213,0.06),transparent 60%);
+}
+/* Giant watermark numeral */
+.cert-hero-watermark{
+  position:absolute;right:-20px;top:-30px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:340px;line-height:1;color:rgba(255,255,255,0.022);
+  pointer-events:none;user-select:none;letter-spacing:-20px;
+  z-index:0;
+}
+.cert-hero > *{position:relative;z-index:1}
+.cert-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.5);font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:32px;
+  font-family:'Barlow Condensed',sans-serif;
+}
+.cert-hero-badge span{color:var(--red)}
+.cert-hero h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(52px,7vw,96px);font-weight:900;
+  line-height:.92;margin-bottom:20px;color:#fff;letter-spacing:-1px;
+}
+.cert-hero h1 em{color:var(--red);font-style:normal;display:block;letter-spacing:0px}
+.cert-hero p{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 36px;line-height:1.7}
+/* Stats row */
+.cert-hero-stats{
+  display:inline-flex;align-items:center;gap:0;
+  border:1px solid rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;
+  margin-bottom:0;
+}
+.cert-stat{
+  padding:12px 28px;font-family:'Barlow Condensed',sans-serif;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.cert-stat:last-child{border-right:none}
+.cert-stat-num{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.cert-stat-label{font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
 
 /* ── LEVEL CARDS ── */
 .levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:1100px;margin:0 auto;padding:0 32px 64px;position:relative;z-index:1}
@@ -354,7 +398,7 @@ nav{background:#0f1923;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 
       <text x="59" y="48" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#555" letter-spacing="1.5">AB Inc.</text>
     </svg>
   </a>
-  <span class="nav-title">Certificate Program</span>
+  <span class="nav-title">Staff Certification Program</span>
   <div class="nav-right">
     <a href="product-profiles-training.html" class="nav-back-btn">← Training Guide</a>
   </div>
@@ -363,9 +407,40 @@ nav{background:#0f1923;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 
 <!-- ══════════ SCREEN: HOME ══════════ -->
 <div id="screen-home" class="screen active">
   <div class="cert-hero">
-    <div class="cert-hero-badge">🎓 Staff Development</div>
-    <h1>Product Profiles<em>Certificate Program</em></h1>
-    <p>Test your knowledge from the training guide. Pass each level to earn your certificate and unlock the next challenge.</p>
+    <div class="cert-hero-watermark">7</div>
+    <div class="cert-hero-badge">FluidSeal AB &nbsp;<span>●</span>&nbsp; Staff Development</div>
+    <h1>Technical<em>Certification Program</em></h1>
+    <p>Master every aspect of industrial sealing — from catalog navigation and measurement to material science. Pass each level to earn your official certificate.</p>
+    <div class="cert-hero-stats">
+      <div class="cert-stat"><div class="cert-stat-num">7</div><div class="cert-stat-label">Levels</div></div>
+      <div class="cert-stat"><div class="cert-stat-num">87</div><div class="cert-stat-label">Questions</div></div>
+      <div class="cert-stat"><div class="cert-stat-num">PDF</div><div class="cert-stat-label">Certificates</div></div>
+      <div class="cert-stat"><div class="cert-stat-num">↥</div><div class="cert-stat-label">Progressive</div></div>
+    </div>
+  </div>
+
+  <!-- Pathway strip -->
+  <div style="background:#0e1825;border-bottom:1px solid var(--border);padding:20px 32px">
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;margin-bottom:14px">Certification Pathway</div>
+      <div style="display:flex;align-items:center;overflow-x:auto;padding-bottom:2px;gap:0">
+        <div style="display:flex;align-items:center;gap:0;flex-shrink:0">
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#3a7bd5;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">1</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Catalogs</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#1abc9c;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">2</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Website</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#9b59b6;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">3</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Profiles</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#e67e22;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">4</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Calipers</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#c8222a;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">5</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Materials</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#c8a000;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">6</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Applications</div></div>
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.12);flex-shrink:0"></div>
+          <div style="text-align:center;min-width:80px"><div style="width:26px;height:26px;border-radius:50%;background:#27ae60;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px">7</div><div style="font-size:10px;color:var(--muted);white-space:nowrap">Mat. Science</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="levels-grid" id="levels-grid">
